@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="588" height="450" viewBox="0 0 196 150">
+  <!-- Skyline mark: a clean cool->warm gradient of flat towers (cooling + heating) -->
+  <g>
+    <rect x="12"  y="98" width="21" height="40"  rx="2.5" fill="#38bdf8"/>
+    <rect x="37"  y="74" width="21" height="64"  rx="2.5" fill="#45c0f7"/>
+    <rect x="62"  y="50" width="21" height="88"  rx="2.5" fill="#74d6fb"/>
+    <rect x="87"  y="32" width="21" height="106" rx="2.5" fill="#a7ecff"/>
+    <rect x="96"  y="18" width="3"  height="16"  rx="1.5" fill="#a7ecff"/>
+    <rect x="112" y="54" width="21" height="84"  rx="2.5" fill="#ff8a5c"/>
+    <rect x="137" y="80" width="21" height="58"  rx="2.5" fill="#ff5a2b"/>
+    <rect x="162" y="102" width="21" height="36" rx="2.5" fill="#e8442a"/>
+  </g>
+</svg>
