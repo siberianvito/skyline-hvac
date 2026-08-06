@@ -132,10 +132,10 @@ export default function Hero() {
       {/* HUD chrome */}
       <div ref={hudRef} className="absolute inset-0">
         {/* top-left — brand chip */}
-        <div data-hud className="absolute top-16 left-6 flex items-center gap-4 opacity-0 md:top-[4.5rem] md:left-10">
+        <div data-hud className="absolute top-6 left-6 flex items-center gap-4 opacity-0 md:top-8 md:left-10">
           <img src={asset("/logo.png")} alt="Skyline HVAC" className="h-11 w-auto md:h-13" />
-          <div className="hidden h-8 w-px bg-frost/20 md:block" />
-          <p className="hud-label hidden md:block">
+          <div className="hidden h-9 w-px bg-night/30 md:block" />
+          <p className="hud-label hud-dark hidden md:block">
             Air conditioning
             <br />
             Miami · FL
@@ -143,7 +143,7 @@ export default function Hero() {
         </div>
 
         {/* top-right — call CTA */}
-        <div data-hud className="absolute top-16 right-6 text-right opacity-0 md:top-[4.5rem] md:right-10">
+        <div data-hud className="absolute top-6 right-6 text-right opacity-0 md:top-8 md:right-10">
           <a
             href="tel:+17865187045"
             className="glow-cta from-glacier to-ice text-night inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r px-5 py-2.5 transition-transform duration-300 hover:scale-[1.04]"
@@ -161,7 +161,7 @@ export default function Hero() {
               786 · 518 · 7045
             </span>
           </a>
-          <p className="hud-label text-ice mt-2 pr-1">24/7 rapid response</p>
+          <p className="hud-label hud-dark mt-2 pr-1">24/7 rapid response</p>
         </div>
 
         {/* bottom-left — temperature module */}

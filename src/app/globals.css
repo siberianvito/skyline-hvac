@@ -44,6 +44,14 @@ body {
   text-shadow: 0 1px 10px rgba(3, 13, 26, 0.85);
 }
 
+/* dark HUD variant — black, larger, for the bright sky area of the film */
+.hud-dark {
+  color: #06121f;
+  text-shadow: 0 1px 6px rgba(234, 247, 255, 0.35);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
 /* pulsing glow for the call CTA — readable over the bright film */
 @keyframes glow-pulse {
   0%, 100% {
