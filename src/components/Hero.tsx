@@ -58,20 +58,23 @@ export default function Hero() {
     return () => window.removeEventListener(BOOT_EVENT, onBoot);
   }, []);
 
-  // after the film freezes on the logo frame, crossfade to the frozen still
-  // (some browsers blank an ended <video>) and breathe life into it
+  // Crossfade to the frozen end-frame still BEFORE playback ends — some
+  // browsers rewind an ended <video> to its first frame, so the still must
+  // already be covering the video the moment 'ended' fires. The film's last
+  // 0.4s is the settled logo frame, so the early fade is invisible.
   const stillRef = useRef<HTMLImageElement>(null);
-  const onEnded = () => {
-    if (stillRef.current) {
-      gsap.to(stillRef.current, { opacity: 1, duration: 0.8, ease: "power2.out" });
-      gsap.to(stillRef.current, {
-        scale: 1.06,
-        duration: 16,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-      });
-    }
+  const finaleStarted = useRef(false);
+  const startFinale = () => {
+    if (finaleStarted.current || !stillRef.current) return;
+    finaleStarted.current = true;
+    gsap.to(stillRef.current, { opacity: 1, duration: 0.35, ease: "power1.out" });
+    gsap.to(stillRef.current, {
+      scale: 1.06,
+      duration: 16,
+      ease: "sine.inOut",
+      yoyo: true,
+      repeat: -1,
+    });
   };
 
   return (
@@ -91,7 +94,11 @@ export default function Hero() {
             playsInline
             preload="auto"
             poster={asset("/media/hero-poster.png")}
-            onEnded={onEnded}
+            onEnded={startFinale}
+            onTimeUpdate={(e) => {
+              const v = e.currentTarget;
+              if (v.duration && v.currentTime > v.duration - 0.4) startFinale();
+            }}
             onError={() => setVideoDead(true)}
           >
             <source src={asset("/media/hero-freeze.mp4?v=4")} type="video/mp4" />
