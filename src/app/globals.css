@@ -40,7 +40,25 @@ body {
   font-size: 0.65rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(234, 247, 255, 0.72);
+  color: rgba(234, 247, 255, 0.85);
+  text-shadow: 0 1px 10px rgba(3, 13, 26, 0.85);
+}
+
+/* pulsing glow for the call CTA — readable over the bright film */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 18px rgba(56, 189, 248, 0.55),
+      0 0 44px rgba(56, 189, 248, 0.25);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(143, 227, 255, 0.85),
+      0 0 70px rgba(56, 189, 248, 0.45);
+  }
+}
+.glow-cta {
+  animation: glow-pulse 2.4s ease-in-out infinite;
 }
 
 .glass {

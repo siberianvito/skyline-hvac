@@ -132,7 +132,7 @@ export default function Hero() {
       {/* HUD chrome */}
       <div ref={hudRef} className="absolute inset-0">
         {/* top-left — brand chip */}
-        <div data-hud className="absolute top-6 left-6 flex items-center gap-4 opacity-0 md:top-8 md:left-10">
+        <div data-hud className="absolute top-16 left-6 flex items-center gap-4 opacity-0 md:top-[4.5rem] md:left-10">
           <img src={asset("/logo.png")} alt="Skyline HVAC" className="h-11 w-auto md:h-13" />
           <div className="hidden h-8 w-px bg-frost/20 md:block" />
           <p className="hud-label hidden md:block">
@@ -143,17 +143,25 @@ export default function Hero() {
         </div>
 
         {/* top-right — call CTA */}
-        <div data-hud className="absolute top-6 right-6 text-right opacity-0 md:top-8 md:right-10">
+        <div data-hud className="absolute top-16 right-6 text-right opacity-0 md:top-[4.5rem] md:right-10">
           <a
             href="tel:+17865187045"
-            className="glass hover:border-ice/60 inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 transition-colors duration-300"
+            className="glow-cta from-glacier to-ice text-night inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r px-5 py-2.5 transition-transform duration-300 hover:scale-[1.04]"
           >
-            <span className="bg-ice inline-block h-1.5 w-1.5 animate-pulse rounded-full" />
-            <span className="font-[family-name:var(--font-plex-mono)] text-sm tracking-[0.12em] text-frost">
+            <svg
+              viewBox="0 0 24 24"
+              className="h-4 w-4 fill-none stroke-current"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.7a2 2 0 0 1 1.7 2Z" />
+            </svg>
+            <span className="font-[family-name:var(--font-plex-mono)] text-sm font-semibold tracking-[0.12em]">
               786 · 518 · 7045
             </span>
           </a>
-          <p className="hud-label mt-2 pr-1 opacity-70">24/7 rapid response</p>
+          <p className="hud-label text-ice mt-2 pr-1">24/7 rapid response</p>
         </div>
 
         {/* bottom-left — temperature module */}

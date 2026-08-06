@@ -1,5 +1,6 @@
 import SmoothScroll from "@/components/SmoothScroll";
 import Preloader from "@/components/Preloader";
+import TopBar from "@/components/TopBar";
 import Hero from "@/components/Hero";
 import FrostDivider from "@/components/FrostDivider";
 import Credibility from "@/components/Credibility";
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       <SmoothScroll />
       <Preloader />
+      <TopBar />
       <main>
         <Hero />
         <Credibility />
