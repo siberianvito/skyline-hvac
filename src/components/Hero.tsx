@@ -94,7 +94,7 @@ export default function Hero() {
             onEnded={onEnded}
             onError={() => setVideoDead(true)}
           >
-            <source src={asset("/media/hero-freeze.mp4?v=3")} type="video/mp4" />
+            <source src={asset("/media/hero-freeze.mp4?v=4")} type="video/mp4" />
           </video>
           <img
             ref={stillRef}
