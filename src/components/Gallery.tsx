@@ -3,6 +3,21 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { asset } from "@/lib/asset";
+
+const JOBS = [
+  { src: "/jobs/job-01.jpg", caption: "Second-story condenser lift" },
+  { src: "/jobs/job-02.jpg", caption: "Commercial rooftop condenser" },
+  { src: "/jobs/job-03.jpg", caption: "Twin-system install · new pads" },
+  { src: "/jobs/job-04.jpg", caption: "Custom duct fabrication" },
+  { src: "/jobs/job-05.jpg", caption: "High-efficiency condenser swap" },
+  { src: "/jobs/job-06.jpg", caption: "Closet air handler install" },
+  { src: "/jobs/job-07.jpg", caption: "Commercial venue ductwork" },
+  { src: "/jobs/job-08.jpg", caption: "Multi-unit rack install" },
+  { src: "/jobs/job-09.jpg", caption: "Lennox air handler install" },
+  { src: "/jobs/job-10.jpg", caption: "Residential condenser install" },
+  { src: "/jobs/job-11.jpg", caption: "Air handler + line set" },
+];
 
 export default function Gallery() {
   const ref = useRef<HTMLElement>(null);
@@ -21,7 +36,7 @@ export default function Gallery() {
           y: 0,
           scale: 1,
           duration: 0.8,
-          stagger: 0.09,
+          stagger: 0.07,
           ease: "power3.out",
           scrollTrigger: { trigger: el, start: "top 70%" },
         }
@@ -40,32 +55,33 @@ export default function Gallery() {
             Cold, delivered.
           </h2>
           <p className="hud-label max-w-xs pb-2 opacity-50">
-            Fresh install shots from the field are on the way — this wall ices
-            over soon.
+            Real installs — condensers, air handlers, custom ductwork.
+            Residential &amp; commercial across Miami-Dade.
           </p>
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div
-              key={i}
+          {JOBS.map((job, i) => (
+            <figure
+              key={job.src}
               data-card
-              className="glass shimmer relative aspect-[4/3] overflow-hidden rounded-2xl opacity-0"
+              className="group border-frost/10 hover:border-ice/40 relative aspect-[3/4] overflow-hidden rounded-2xl border opacity-0 transition-colors duration-500"
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="breathe stroke-ice h-8 w-8 fill-none"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                >
-                  <path d="M12 2v20M12 2l-3 3M12 2l3 3M12 22l-3-3M12 22l3-3M2 12h20M2 12l3-3M2 12l3 3M22 12l-3-3M22 12l-3 3M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6" />
-                </svg>
-                <span className="hud-label opacity-40">
-                  Job photo · {String(i + 1).padStart(2, "0")}
+              <img
+                src={asset(job.src)}
+                alt={job.caption}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+              />
+              {/* frost sheen on hover */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-night/85 via-night/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
+              <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between p-4">
+                <span className="hud-label text-frost/90">{job.caption}</span>
+                <span className="hud-label text-ice/70">
+                  {String(i + 1).padStart(2, "0")}
                 </span>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>
