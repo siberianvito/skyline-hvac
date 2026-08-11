@@ -18,9 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PAGES_BASE_PATH: /skyline-hvac
-      NEXT_PUBLIC_BASE_PATH: /skyline-hvac
-      SITE_URL: https://siberianvito.github.io
+      # Custom domain (skylinehvacpros.com) serves from the root — no base path
+      SITE_URL: https://skylinehvacpros.com
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
