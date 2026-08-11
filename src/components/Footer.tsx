@@ -16,10 +16,10 @@ export default function Footer() {
           <div>
             <p className="hud-label text-ice mb-5">Contact</p>
             <a
-              href="tel:+17865187045"
+              href="tel:+17868078125"
               className="font-[family-name:var(--font-space-grotesk)] text-2xl text-frost transition-colors hover:text-ice"
             >
-              786 · 518 · 7045
+              786 · 807 · 8125
             </a>
             <p className="text-steel mt-3 text-[15px]">
               24/7 emergency response

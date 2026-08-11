@@ -152,11 +152,11 @@ export default function About() {
 
           <a
             data-about
-            href="tel:+17865187045"
+            href="tel:+17868078125"
             className="text-ice mt-10 inline-flex items-center gap-3 font-[family-name:var(--font-space-grotesk)] text-lg opacity-0 transition-colors hover:text-frost"
           >
             <span className="bg-ice inline-block h-2 w-2 animate-pulse rounded-full" />
-            Talk to the crew — 786 · 518 · 7045
+            Talk to the crew — 786 · 807 · 8125
           </a>
         </div>
       </div>

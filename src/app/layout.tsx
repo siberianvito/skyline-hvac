@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.SITE_URL ?? "http://localhost:3004"),
   title: "Skyline HVAC — Air Conditioning · Miami",
   description:
-    "Miami's premium air conditioning company. Installation · Service · Repair. Licensed & insured (CAC1824633). Call (786) 518-7045.",
+    "Miami's premium air conditioning company. Installation · Service · Repair. Licensed & insured (CAC1824633). Call (786) 807-8125.",
   openGraph: {
     title: "Skyline HVAC — Air Conditioning · Miami",
     description:
-      "Installation · Service · Repair. Licensed & insured (CAC1824633). 24/7 across Miami-Dade & Broward — (786) 518-7045.",
+      "Installation · Service · Repair. Licensed & insured (CAC1824633). 24/7 across Miami-Dade & Broward — (786) 807-8125.",
     images: [`${basePath}/media/hero-frozen.png`],
     type: "website",
   },

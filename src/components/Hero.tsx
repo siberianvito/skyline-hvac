@@ -152,7 +152,7 @@ export default function Hero() {
         {/* top-right — call CTA */}
         <div data-hud className="absolute top-6 right-6 text-right opacity-0 md:top-8 md:right-10">
           <a
-            href="tel:+17865187045"
+            href="tel:+17868078125"
             className="glow-cta from-glacier to-ice text-night inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r px-5 py-2.5 transition-transform duration-300 hover:scale-[1.04]"
           >
             <svg
@@ -165,7 +165,7 @@ export default function Hero() {
               <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.7a2 2 0 0 1 1.7 2Z" />
             </svg>
             <span className="font-[family-name:var(--font-plex-mono)] text-sm font-semibold tracking-[0.12em]">
-              786 · 518 · 7045
+              786 · 807 · 8125
             </span>
           </a>
           <p className="hud-label hud-dark mt-2 pr-1">24/7 rapid response</p>
