@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import GHLForm from "./GHLForm";
 
 const REASONS = [
   {
@@ -36,23 +37,8 @@ const REASONS = [
   },
 ];
 
-const SERVICES = [
-  { key: "New installation", label: "New install", icon: "❄" },
-  { key: "Repair — my AC is down", label: "Repair", icon: "⚡" },
-  { key: "Maintenance / tune-up", label: "Tune-up", icon: "✓" },
-  { key: "Commercial", label: "Commercial", icon: "▦" },
-];
-
-// FormSubmit relay — leads land in the Quantum Impact inbox until the
-// client's own address is wired in. Swap the address to change recipient.
-const FORM_ENDPOINT = "https://formsubmit.co/ajax/siberiancorps@gmail.com";
-
 export default function WhySkyline() {
   const ref = useRef<HTMLElement>(null);
-  const [sent, setSent] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [service, setService] = useState("");
-  const [serviceMissing, setServiceMissing] = useState(false);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -87,9 +73,6 @@ export default function WhySkyline() {
 
     return () => ctx.revert();
   }, []);
-
-  const inputCls =
-    "rounded-xl border border-night/15 bg-night/[0.04] px-4 py-3.5 text-[15px] text-night placeholder:text-night/40";
 
   return (
     <section ref={ref} id="estimate" className="bg-night relative py-24 md:py-32">
@@ -130,7 +113,7 @@ export default function WhySkyline() {
           </div>
         </div>
 
-        {/* right — free consultation card (white, high contrast) */}
+        {/* right — free consultation card (GoHighLevel form) */}
         <div data-form className="opacity-0 lg:sticky lg:top-16 lg:self-start">
           <div className="overflow-hidden rounded-3xl bg-frost text-night shadow-[0_30px_90px_rgba(3,13,26,0.6)]">
             {/* ribbon */}
@@ -143,154 +126,11 @@ export default function WhySkyline() {
               </p>
             </div>
 
-            <div className="p-7 md:p-9">
-              {sent ? (
-                <div className="py-14 text-center">
-                  <div className="from-glacier to-ice mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br">
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="stroke-night h-7 w-7 fill-none"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    >
-                      <path d="M4 12l5 5L20 6" />
-                    </svg>
-                  </div>
-                  <h3 className="font-[family-name:var(--font-space-grotesk)] text-2xl text-night">
-                    Consider it handled.
-                  </h3>
-                  <p className="mt-3 text-night/60">
-                    A specialist calls you back within the hour.
-                    <br />
-                    Can&apos;t wait?{" "}
-                    <a
-                      href="tel:+17868078125"
-                      className="text-glacier font-semibold underline underline-offset-4"
-                    >
-                      786 · 807 · 8125
-                    </a>
-                  </p>
-                </div>
-              ) : (
-                <>
-                  <h3 className="font-[family-name:var(--font-space-grotesk)] text-2xl font-semibold tracking-tight text-night md:text-[1.7rem]">
-                    Consult with a specialist — free.
-                  </h3>
-                  <p className="mt-2 text-[15px] leading-relaxed text-night/55">
-                    Tell us what&apos;s going on. A certified tech calls back —
-                    usually within the hour.
-                  </p>
-
-                  <form
-                    className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2"
-                    onSubmit={async (e) => {
-                      e.preventDefault();
-                      if (sending) return;
-                      if (!service) {
-                        setServiceMissing(true);
-                        return;
-                      }
-                      setSending(true);
-                      const data = Object.fromEntries(
-                        new FormData(e.currentTarget).entries()
-                      );
-                      try {
-                        await fetch(FORM_ENDPOINT, {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json",
-                            Accept: "application/json",
-                          },
-                          body: JSON.stringify({
-                            ...data,
-                            service,
-                            _subject: "❄️ New Skyline HVAC free consultation request",
-                            _template: "table",
-                          }),
-                        });
-                      } catch {
-                        // success card carries the phone number as fallback
-                      }
-                      setSent(true);
-                    }}
-                  >
-                    {/* service pills */}
-                    <div className="sm:col-span-2">
-                      <p
-                        className={`font-[family-name:var(--font-plex-mono)] mb-2.5 text-[11px] tracking-[0.2em] uppercase ${
-                          serviceMissing ? "text-heat" : "text-night/50"
-                        }`}
-                      >
-                        {serviceMissing
-                          ? "→ Pick a service to continue"
-                          : "What do you need?"}
-                      </p>
-                      <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
-                        {SERVICES.map((s) => {
-                          const active = service === s.key;
-                          return (
-                            <button
-                              key={s.key}
-                              type="button"
-                              onClick={() => {
-                                setService(s.key);
-                                setServiceMissing(false);
-                              }}
-                              className={`rounded-xl border px-3 py-3 text-center text-[13px] font-medium transition-all duration-200 ${
-                                active
-                                  ? "from-glacier to-ice border-transparent bg-gradient-to-br text-night shadow-[0_4px_18px_rgba(56,189,248,0.45)]"
-                                  : `bg-white text-night/70 hover:border-glacier/60 hover:text-night ${
-                                      serviceMissing
-                                        ? "border-heat/50"
-                                        : "border-night/15"
-                                    }`
-                              }`}
-                            >
-                              <span className="mb-0.5 block text-base">{s.icon}</span>
-                              {s.label}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    <input required name="name" placeholder="Name" className={inputCls} />
-                    <input
-                      required
-                      name="phone"
-                      type="tel"
-                      placeholder="Phone"
-                      className={inputCls}
-                    />
-                    <input
-                      name="zip"
-                      placeholder="ZIP code"
-                      className={`${inputCls} sm:col-span-2`}
-                    />
-                    <textarea
-                      rows={3}
-                      name="details"
-                      placeholder="Tell us what's going on (optional)"
-                      className={`${inputCls} sm:col-span-2`}
-                    />
-                    <button
-                      type="submit"
-                      disabled={sending}
-                      className="group bg-night text-frost mt-1 rounded-xl px-6 py-4 font-[family-name:var(--font-space-grotesk)] text-[15px] font-semibold tracking-wide shadow-[0_0_0_rgba(56,189,248,0)] transition-all duration-300 hover:shadow-[0_8px_34px_rgba(56,189,248,0.5)] disabled:opacity-60 sm:col-span-2"
-                    >
-                      {sending ? "Sending…" : "Book my free consult"}
-                      {!sending && (
-                        <span className="text-ice ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
-                          →
-                        </span>
-                      )}
-                    </button>
-                    <p className="font-[family-name:var(--font-plex-mono)] mt-1 text-center text-[10px] tracking-[0.18em] text-night/40 uppercase sm:col-span-2">
-                      No spam · no pressure · usually 1-hour callback
-                    </p>
-                  </form>
-                </>
-              )}
+            <div className="p-3 md:p-5">
+              <GHLForm />
+              <p className="font-[family-name:var(--font-plex-mono)] mt-2 pb-2 text-center text-[10px] tracking-[0.18em] text-night/40 uppercase">
+                No spam · no pressure · usually 1-hour callback
+              </p>
             </div>
           </div>
         </div>
