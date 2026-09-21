@@ -4,6 +4,7 @@ import NavBar from "@/components/NavBar";
 import TopBanner from "@/components/TopBanner";
 import ExitPopup from "@/components/ExitPopup";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
+import MobileCTABar from "@/components/MobileCTABar";
 import "./globals.css";
 
 const display = Space_Grotesk({
@@ -51,6 +52,7 @@ export default function RootLayout({
         {children}
         <ExitPopup />
         <AccessibilityWidget />
+        <MobileCTABar />
       </body>
     </html>
   );

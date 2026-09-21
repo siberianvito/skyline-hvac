@@ -47,7 +47,7 @@ export default function AccessibilityWidget() {
   };
 
   return (
-    <div className="fixed bottom-5 left-5 z-[80]">
+    <div className="fixed bottom-24 left-4 z-[80] md:bottom-5 md:left-5">
       {open && (
         <div className="mb-3 w-64 overflow-hidden rounded-2xl border border-night/10 bg-white shadow-[0_24px_70px_rgba(3,13,26,0.35)]">
           <div className="from-glacier to-ice flex items-center justify-between bg-gradient-to-r px-5 py-3">
