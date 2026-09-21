@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import GHLForm from "./GHLForm";
+import GHLForm, { FormLegalNote } from "./GHLForm";
 
 const SEEN_KEY = "skyline-exit-shown";
 
@@ -100,6 +100,9 @@ export default function ExitPopup() {
 
           <div className="p-3 md:p-4">
             <GHLForm idSuffix="exit" />
+            <div className="mt-3 pb-1">
+              <FormLegalNote />
+            </div>
           </div>
         </div>
       </div>

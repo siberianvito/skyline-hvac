@@ -40,13 +40,36 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-frost/10 pt-8 md:flex-row">
-          <p className="hud-label opacity-50">
-            © 2026 Skyline HVAC · Miami, FL
-          </p>
-          <p className="hud-label opacity-40">
-            Site by Quantum Impact Marketing
-          </p>
+        <div className="mt-16 flex flex-col items-center gap-5 border-t border-frost/10 pt-8">
+          <nav className="flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
+            <a
+              href="/contact"
+              className="hud-label text-steel hover:text-ice transition-colors"
+            >
+              Contact Us
+            </a>
+            <a
+              href="/privacy"
+              className="hud-label text-steel hover:text-ice transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="/terms"
+              className="hud-label text-steel hover:text-ice transition-colors"
+            >
+              Terms of Service
+            </a>
+          </nav>
+
+          <div className="flex w-full flex-col items-center justify-between gap-3 md:flex-row">
+            <p className="hud-label opacity-50">
+              © 2026 Skyline HVAC · Miami, FL
+            </p>
+            <p className="hud-label opacity-40">
+              Site by Quantum Impact Marketing
+            </p>
+          </div>
         </div>
       </div>
     </footer>

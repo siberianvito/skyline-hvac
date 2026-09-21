@@ -1,4 +1,4 @@
-import GHLForm from "./GHLForm";
+import GHLForm, { FormLegalNote } from "./GHLForm";
 
 export default function ConsultCard({
   title = "Skilled AC techs standing by — ready to help today.",
@@ -29,9 +29,14 @@ export default function ConsultCard({
 
       <div className="p-3 md:p-5">
         <GHLForm idSuffix={idSuffix} />
-        <p className="font-[family-name:var(--font-plex-mono)] mt-2 pb-2 text-center text-[10px] tracking-[0.18em] text-night/40 uppercase">
-          No spam · no pressure · usually 1-hour callback
-        </p>
+        <div className="mt-2 pb-2 text-center">
+          <p className="font-[family-name:var(--font-plex-mono)] text-[10px] tracking-[0.18em] text-night/40 uppercase">
+            No spam · no pressure · usually 1-hour callback
+          </p>
+          <div className="mt-3">
+            <FormLegalNote />
+          </div>
+        </div>
       </div>
     </div>
   );

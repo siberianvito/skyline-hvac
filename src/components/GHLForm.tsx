@@ -7,6 +7,30 @@ import { useEffect } from "react";
 export const GHL_FORM_EMBED_URL =
   "https://api.leadconnectorhq.com/widget/form/DMv3BTR1bGX33BWCrS8G";
 
+// Legal links under the form — dark, for the light form card
+const linkClass =
+  "font-medium text-night/75 underline decoration-night/25 underline-offset-2 transition-colors hover:text-glacier";
+
+/* Consent + legal notice that sits at the foot of the form. Lives here rather
+   than in the pages so it travels with the form everywhere it is embedded. */
+export function FormLegalNote() {
+  return (
+    <p className="mx-auto max-w-md text-center text-[11.5px] leading-relaxed text-night/55">
+      By submitting this form you agree to be contacted by phone, text, or email
+      about your request. Message and data rates may apply and message frequency
+      varies. Reply STOP to opt out, or HELP for help. See our{" "}
+      <a href="/privacy" className={linkClass}>
+        Privacy Policy
+      </a>{" "}
+      and{" "}
+      <a href="/terms" className={linkClass}>
+        Terms of Service
+      </a>
+      .
+    </p>
+  );
+}
+
 export default function GHLForm({ idSuffix = "" }: { idSuffix?: string }) {
   useEffect(() => {
     // GHL's resizer script — makes the iframe auto-fit the form height

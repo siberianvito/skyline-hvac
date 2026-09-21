@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services`, lastModified: now, priority: 0.9 },
     { url: `${BASE}/contact`, lastModified: now, priority: 0.8 },
     { url: `${BASE}/blog`, lastModified: now, priority: 0.5 },
+    { url: `${BASE}/privacy`, lastModified: now, priority: 0.3 },
+    { url: `${BASE}/terms`, lastModified: now, priority: 0.3 },
     ...SERVICES.map((s) => ({
       url: `${BASE}/services/${s.slug}`,
       lastModified: now,
