@@ -44,6 +44,11 @@ export default function Footer() {
           <p className="hud-label opacity-50">
             © 2026 Skyline HVAC · Miami, FL
           </p>
+          <p className="hud-label opacity-60">
+            <a href="/privacy-policy" className="hover:text-ice">Privacy Policy</a>
+            {" · "}
+            <a href="/terms-of-service" className="hover:text-ice">Terms of Service</a>
+          </p>
           <p className="hud-label opacity-40">
             Site by Quantum Impact Marketing
           </p>

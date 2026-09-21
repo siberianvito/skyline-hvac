@@ -3,6 +3,7 @@ import { Space_Grotesk, IBM_Plex_Mono, Manrope } from "next/font/google";
 import NavBar from "@/components/NavBar";
 import TopBanner from "@/components/TopBanner";
 import ExitPopup from "@/components/ExitPopup";
+import AccessibilityWidget from "@/components/AccessibilityWidget";
 import "./globals.css";
 
 const display = Space_Grotesk({
@@ -49,6 +50,7 @@ export default function RootLayout({
         <NavBar />
         {children}
         <ExitPopup />
+        <AccessibilityWidget />
       </body>
     </html>
   );

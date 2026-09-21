@@ -1,10 +1,5 @@
 import { asset } from "@/lib/asset";
-
-const LINKS = [
-  { label: "Services", href: "/services" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/contact" },
-];
+import { SERVICES } from "@/lib/services";
 
 export default function NavBar() {
   return (
@@ -20,15 +15,62 @@ export default function NavBar() {
           </a>
 
           <nav className="hidden items-center gap-8 md:flex">
-            {LINKS.map((l) => (
+            {/* Services — hover dropdown */}
+            <div className="group relative">
               <a
-                key={l.label}
-                href={l.href}
-                className="text-night/80 hover:text-glacier font-[family-name:var(--font-space-grotesk)] text-[15px] font-semibold tracking-wide transition-colors"
+                href="/services"
+                className="text-night/80 hover:text-glacier flex items-center gap-1.5 py-3 font-[family-name:var(--font-space-grotesk)] text-[15px] font-semibold tracking-wide transition-colors"
               >
-                {l.label}
+                Services
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-3.5 w-3.5 fill-none stroke-current transition-transform duration-200 group-hover:rotate-180"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
               </a>
-            ))}
+              <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-1 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                <div className="overflow-hidden rounded-2xl border border-night/10 bg-white p-2 shadow-[0_24px_60px_rgba(3,13,26,0.18)]">
+                  {SERVICES.map((s) => (
+                    <a
+                      key={s.slug}
+                      href={`/services/${s.slug}`}
+                      className="text-night/80 hover:bg-frost hover:text-glacier block rounded-xl px-4 py-2.5 text-[14px] font-medium transition-colors"
+                    >
+                      {s.title}
+                    </a>
+                  ))}
+                  <a
+                    href="/services"
+                    className="text-glacier block rounded-xl px-4 py-2.5 text-[14px] font-semibold"
+                  >
+                    All services →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="/about"
+              className="text-night/80 hover:text-glacier font-[family-name:var(--font-space-grotesk)] text-[15px] font-semibold tracking-wide transition-colors"
+            >
+              About Us
+            </a>
+            <a
+              href="/blog"
+              className="text-night/80 hover:text-glacier font-[family-name:var(--font-space-grotesk)] text-[15px] font-semibold tracking-wide transition-colors"
+            >
+              Blog
+            </a>
+            <a
+              href="/contact"
+              className="text-night/80 hover:text-glacier font-[family-name:var(--font-space-grotesk)] text-[15px] font-semibold tracking-wide transition-colors"
+            >
+              Contact Us
+            </a>
           </nav>
 
           <a
@@ -51,8 +93,13 @@ export default function NavBar() {
         </div>
 
         {/* mobile links — always visible, no hamburger to hunt for */}
-        <nav className="flex items-center justify-center gap-7 pb-2.5 md:hidden">
-          {LINKS.map((l) => (
+        <nav className="flex items-center justify-center gap-6 pb-2.5 md:hidden">
+          {[
+            { label: "Services", href: "/services" },
+            { label: "About", href: "/about" },
+            { label: "Blog", href: "/blog" },
+            { label: "Contact", href: "/contact" },
+          ].map((l) => (
             <a
               key={l.label}
               href={l.href}

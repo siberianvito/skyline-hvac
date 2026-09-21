@@ -103,8 +103,8 @@ export const SERVICES: Service[] = [
     slug: "commercial-ac-repair",
     title: "Commercial AC Repair",
     short: "Rooftop units, split systems & server rooms — minimal downtime.",
-    image: "/jobs/job-02.jpg",
-    imageAlt: "Rooftop commercial condenser repaired by Skyline HVAC in Miami",
+    image: "/media/services/commercial-rtu.jpg",
+    imageAlt: "Rooftop package unit serviced by Skyline HVAC on a Miami commercial roof",
     intro: [
       "A hot storefront empties fast, and a hot office gets nothing done. Skyline HVAC keeps South Florida businesses cool with rapid commercial response across Miami-Dade, Broward, and Palm Beach — rooftop package units, split systems, mini-splits, and server room cooling.",
       "We work around your operating hours where possible, communicate clearly with property managers, and document every repair so your maintenance records stay clean.",
