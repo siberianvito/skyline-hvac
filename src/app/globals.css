@@ -159,6 +159,15 @@ body {
     linear-gradient(180deg, rgba(3, 13, 26, 0.55), transparent 22%, transparent 72%, rgba(3, 13, 26, 0.92));
 }
 
+/* ---------- serving-areas marquee (above nav) ---------- */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 55s linear infinite;
+}
+
 /* ---------- gallery placeholder pulse ---------- */
 @keyframes breathe {
   0%, 100% { opacity: 0.35; }

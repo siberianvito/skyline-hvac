@@ -1,9 +1,9 @@
 import { asset } from "@/lib/asset";
 
 const LINKS = [
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/#estimate" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export default function NavBar() {

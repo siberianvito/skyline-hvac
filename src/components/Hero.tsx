@@ -3,7 +3,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { asset } from "@/lib/asset";
-import GHLForm from "./GHLForm";
+import { SERVICES } from "@/lib/services";
+import ConsultCard from "./ConsultCard";
 
 const BENEFITS = [
   "24/7 emergency after-hours service",
@@ -72,41 +73,31 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* form — right side */}
+          {/* form — right side, with the services we offer beneath it */}
           <div
             data-hero-in
             id="estimate"
             className="opacity-0 lg:col-start-2 lg:row-span-2 lg:row-start-1"
           >
-            <div className="overflow-hidden rounded-3xl bg-frost text-night shadow-[0_30px_90px_rgba(3,13,26,0.6)]">
-              <div className="from-glacier to-ice flex items-center justify-between bg-gradient-to-r px-7 py-4 md:px-9">
-                <p className="font-[family-name:var(--font-plex-mono)] text-xs font-semibold tracking-[0.24em] text-night uppercase">
-                  ❄ Free consultation
-                </p>
-                <p className="font-[family-name:var(--font-plex-mono)] text-[10px] tracking-[0.18em] text-night/60 uppercase">
-                  No obligation
-                </p>
-              </div>
+            <ConsultCard />
 
-              <div className="px-5 pt-6 md:px-7">
-                <h2 className="font-[family-name:var(--font-space-grotesk)] text-xl font-semibold tracking-tight text-night md:text-2xl">
-                  Skilled AC techs standing by — ready to help today.
-                </h2>
-                <p className="mt-1.5 text-[15px] text-night/60">
-                  Residential &amp; commercial · a certified tech calls back fast.
-                </p>
-              </div>
-
-              <div className="p-3 md:p-5">
-                <GHLForm />
-                <p className="font-[family-name:var(--font-plex-mono)] mt-2 pb-2 text-center text-[10px] tracking-[0.18em] text-night/40 uppercase">
-                  No spam · no pressure · usually 1-hour callback
-                </p>
+            <div className="mt-7">
+              <p className="hud-label text-ice mb-4">Services we offer</p>
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {SERVICES.map((s) => (
+                  <a
+                    key={s.slug}
+                    href={`/services/${s.slug}`}
+                    className="glass hover:border-ice/50 hover:text-ice rounded-lg px-3 py-2.5 text-center text-[13px] font-medium text-frost/85 transition-colors"
+                  >
+                    {s.title}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* benefits checklist */}
+          {/* benefits checklist + Google reviews badge */}
           <div className="lg:col-start-1 lg:row-start-2">
             <ul className="space-y-4">
               {BENEFITS.map((b) => (
@@ -128,6 +119,14 @@ export default function Hero() {
                 </li>
               ))}
             </ul>
+
+            <div data-hero-in className="mt-8 flex justify-center opacity-0 lg:max-w-md">
+              <img
+                src={asset("/media/google-badge.png")}
+                alt="Rated Excellent — 5 stars on Google"
+                className="w-56 rounded-2xl shadow-[0_10px_40px_rgba(3,13,26,0.5)] md:w-64"
+              />
+            </div>
           </div>
         </div>
       </div>

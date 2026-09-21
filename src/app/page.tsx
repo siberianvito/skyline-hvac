@@ -1,10 +1,12 @@
 import SmoothScroll from "@/components/SmoothScroll";
 import Hero from "@/components/Hero";
+import TrustSection from "@/components/TrustSection";
 import FrostDivider from "@/components/FrostDivider";
 import Credibility from "@/components/Credibility";
 import WhySkyline from "@/components/WhySkyline";
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
+import CityDirectory from "@/components/CityDirectory";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -13,6 +15,7 @@ export default function Home() {
       <SmoothScroll />
       <main>
         <Hero />
+        <TrustSection />
         <Credibility />
         <FrostDivider />
         <WhySkyline />
@@ -20,6 +23,7 @@ export default function Home() {
         <About />
         <FrostDivider />
         <Gallery />
+        <CityDirectory />
         <Footer />
       </main>
     </>

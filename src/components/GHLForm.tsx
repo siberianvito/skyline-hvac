@@ -7,7 +7,7 @@ import { useEffect } from "react";
 export const GHL_FORM_EMBED_URL =
   "https://api.leadconnectorhq.com/widget/form/DMv3BTR1bGX33BWCrS8G";
 
-export default function GHLForm() {
+export default function GHLForm({ idSuffix = "" }: { idSuffix?: string }) {
   useEffect(() => {
     // GHL's resizer script — makes the iframe auto-fit the form height
     const existing = document.querySelector(
@@ -27,7 +27,7 @@ export default function GHLForm() {
   return (
     <iframe
       src={GHL_FORM_EMBED_URL}
-      id={`inline-${formId}`}
+      id={`inline-${formId}${idSuffix ? `-${idSuffix}` : ""}`}
       title="Free consultation — Skyline HVAC"
       className="block w-full border-0"
       style={{ minHeight: 480 }}
