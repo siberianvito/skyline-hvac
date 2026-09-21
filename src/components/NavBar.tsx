@@ -8,17 +8,14 @@ const LINKS = [
 
 export default function NavBar() {
   return (
-    <header className="border-frost/10 bg-night/90 sticky top-0 z-50 border-b backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-night/10 bg-white/95 shadow-[0_2px_20px_rgba(3,13,26,0.08)] backdrop-blur-md">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <div className="flex items-center justify-between gap-3 py-2.5 md:py-3">
-          <a
-            href="/"
-            className="bg-frost shrink-0 rounded-xl px-2.5 py-1 shadow-[0_0_20px_rgba(143,227,255,0.25)]"
-          >
+        <div className="flex items-center justify-between gap-3 py-2 md:py-2.5">
+          <a href="/" className="shrink-0">
             <img
               src={asset("/logo.png")}
               alt="Skyline HVAC"
-              className="h-10 w-auto md:h-12"
+              className="h-12 w-auto md:h-14"
             />
           </a>
 
@@ -27,7 +24,7 @@ export default function NavBar() {
               <a
                 key={l.label}
                 href={l.href}
-                className="text-frost/85 hover:text-ice font-[family-name:var(--font-space-grotesk)] text-[15px] font-medium tracking-wide transition-colors"
+                className="text-night/80 hover:text-glacier font-[family-name:var(--font-space-grotesk)] text-[15px] font-semibold tracking-wide transition-colors"
               >
                 {l.label}
               </a>
@@ -59,7 +56,7 @@ export default function NavBar() {
             <a
               key={l.label}
               href={l.href}
-              className="text-frost/85 font-[family-name:var(--font-space-grotesk)] text-sm font-medium"
+              className="text-night/80 font-[family-name:var(--font-space-grotesk)] text-sm font-semibold"
             >
               {l.label}
             </a>
