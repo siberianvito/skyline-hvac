@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, IBM_Plex_Mono, Manrope } from "next/font/google";
+import NavBar from "@/components/NavBar";
 import "./globals.css";
 
 const display = Space_Grotesk({
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body
         className={`${display.variable} ${hud.variable} ${body.variable} antialiased`}
       >
+        <NavBar />
         {children}
       </body>
     </html>

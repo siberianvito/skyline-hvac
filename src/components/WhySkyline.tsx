@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GHLForm from "./GHLForm";
 
 const REASONS = [
   {
@@ -48,25 +47,14 @@ export default function WhySkyline() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el.querySelectorAll("[data-reason]"),
-        { opacity: 0, x: -36 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.9,
-          stagger: 0.14,
-          ease: "power3.out",
-          scrollTrigger: { trigger: el, start: "top 65%" },
-        }
-      );
-      gsap.fromTo(
-        el.querySelector("[data-form]"),
-        { opacity: 0, y: 44 },
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
-          duration: 1.1,
+          duration: 0.9,
+          stagger: 0.12,
           ease: "power3.out",
-          scrollTrigger: { trigger: el, start: "top 60%" },
+          scrollTrigger: { trigger: el, start: "top 70%" },
         }
       );
     }, el);
@@ -75,64 +63,53 @@ export default function WhySkyline() {
   }, []);
 
   return (
-    <section ref={ref} id="estimate" className="bg-night relative py-24 md:py-32">
-      <div className="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-2 lg:gap-20">
-        {/* left — why */}
-        <div>
-          <p className="hud-label text-ice mb-4">Why Skyline</p>
-          <h2 className="font-[family-name:var(--font-space-grotesk)] text-4xl font-medium tracking-tight text-frost md:text-5xl">
-            Why Miami
-            <br />
-            calls Skyline.
-          </h2>
+    <section ref={ref} id="services" className="bg-night relative py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <p className="hud-label text-ice mb-4">Our services · Why Skyline</p>
+        <h2 className="font-[family-name:var(--font-space-grotesk)] text-4xl font-medium tracking-tight text-frost md:text-5xl">
+          Why Miami calls Skyline.
+        </h2>
 
-          <div className="mt-12 space-y-9">
-            {REASONS.map((r) => (
-              <div key={r.title} data-reason className="flex gap-5 opacity-0">
-                <div className="glass flex h-12 w-12 shrink-0 items-center justify-center rounded-xl">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="stroke-ice h-5 w-5 fill-none"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    {r.icon}
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-medium text-frost">
-                    {r.title}
-                  </h3>
-                  <p className="text-steel mt-1.5 max-w-md text-[15px] leading-relaxed">
-                    {r.copy}
-                  </p>
-                </div>
+        <div className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2">
+          {REASONS.map((r) => (
+            <div key={r.title} data-reason className="flex gap-5 opacity-0">
+              <div className="glass flex h-12 w-12 shrink-0 items-center justify-center rounded-xl">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="stroke-ice h-5 w-5 fill-none"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  {r.icon}
+                </svg>
               </div>
-            ))}
-          </div>
+              <div>
+                <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-medium text-frost">
+                  {r.title}
+                </h3>
+                <p className="text-steel mt-1.5 max-w-md text-[15px] leading-relaxed">
+                  {r.copy}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* right — free consultation card (GoHighLevel form) */}
-        <div data-form className="opacity-0 lg:sticky lg:top-16 lg:self-start">
-          <div className="overflow-hidden rounded-3xl bg-frost text-night shadow-[0_30px_90px_rgba(3,13,26,0.6)]">
-            {/* ribbon */}
-            <div className="from-glacier to-ice flex items-center justify-between bg-gradient-to-r px-7 py-4 md:px-9">
-              <p className="font-[family-name:var(--font-plex-mono)] text-xs font-semibold tracking-[0.24em] text-night uppercase">
-                ❄ Free consultation
-              </p>
-              <p className="font-[family-name:var(--font-plex-mono)] text-[10px] tracking-[0.18em] text-night/60 uppercase">
-                No obligation
-              </p>
-            </div>
-
-            <div className="p-3 md:p-5">
-              <GHLForm />
-              <p className="font-[family-name:var(--font-plex-mono)] mt-2 pb-2 text-center text-[10px] tracking-[0.18em] text-night/40 uppercase">
-                No spam · no pressure · usually 1-hour callback
-              </p>
-            </div>
-          </div>
+        {/* call strip */}
+        <div className="glass mt-16 flex flex-col items-center justify-between gap-5 rounded-2xl px-8 py-7 text-center sm:flex-row sm:text-left">
+          <p className="font-[family-name:var(--font-space-grotesk)] text-xl text-frost md:text-2xl">
+            AC acting up right now?{" "}
+            <span className="text-steel block text-base md:inline">
+              We answer 24/7 — nights, weekends, holidays.
+            </span>
+          </p>
+          <a
+            href="tel:+17868078125"
+            className="glow-cta from-glacier to-ice text-night shrink-0 rounded-full bg-gradient-to-r px-7 py-3.5 font-[family-name:var(--font-plex-mono)] text-sm font-semibold tracking-[0.1em]"
+          >
+            786 · 807 · 8125
+          </a>
         </div>
       </div>
     </section>

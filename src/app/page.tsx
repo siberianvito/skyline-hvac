@@ -1,5 +1,4 @@
 import SmoothScroll from "@/components/SmoothScroll";
-import Preloader from "@/components/Preloader";
 import Hero from "@/components/Hero";
 import FrostDivider from "@/components/FrostDivider";
 import Credibility from "@/components/Credibility";
@@ -12,7 +11,6 @@ export default function Home() {
   return (
     <>
       <SmoothScroll />
-      <Preloader />
       <main>
         <Hero />
         <Credibility />
