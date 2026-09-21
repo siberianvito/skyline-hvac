@@ -73,6 +73,15 @@ export default function NavBar() {
             </a>
           </nav>
 
+          <div className="flex shrink-0 items-center gap-2.5 md:gap-3.5">
+          <div className="text-right leading-tight">
+            <p className="font-[family-name:var(--font-space-grotesk)] text-heat text-[14px] font-bold md:text-[15px]">
+              24/7
+            </p>
+            <p className="font-[family-name:var(--font-plex-mono)] text-[8.5px] font-semibold tracking-[0.16em] text-night/60 uppercase md:text-[9.5px]">
+              Emergency
+            </p>
+          </div>
           <a
             href="tel:+17868078125"
             className="glow-cta from-glacier to-ice text-night inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-r px-4 py-2 transition-transform duration-300 hover:scale-[1.04] md:px-5 md:py-2.5"
@@ -90,6 +99,7 @@ export default function NavBar() {
               786 · 807 · 8125
             </span>
           </a>
+          </div>
         </div>
 
         {/* mobile links — always visible, no hamburger to hunt for */}
