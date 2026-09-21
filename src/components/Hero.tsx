@@ -124,7 +124,7 @@ export default function Hero() {
               <img
                 src={asset("/media/google-badge.png")}
                 alt="Rated Excellent — 5 stars on Google"
-                className="w-56 rounded-2xl shadow-[0_10px_40px_rgba(3,13,26,0.5)] md:w-64"
+                className="w-60 drop-shadow-[0_6px_24px_rgba(3,13,26,0.7)] md:w-72"
               />
             </div>
           </div>

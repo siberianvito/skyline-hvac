@@ -19,11 +19,11 @@ export function FormLegalNote() {
       By submitting this form you agree to be contacted by phone, text, or email
       about your request. Message and data rates may apply and message frequency
       varies. Reply STOP to opt out, or HELP for help. See our{" "}
-      <a href="/privacy" className={linkClass}>
+      <a href="/privacy-policy" className={linkClass}>
         Privacy Policy
       </a>{" "}
       and{" "}
-      <a href="/terms" className={linkClass}>
+      <a href="/terms-of-service" className={linkClass}>
         Terms of Service
       </a>
       .
