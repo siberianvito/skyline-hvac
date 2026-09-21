@@ -55,10 +55,29 @@ export default function Hero() {
       <div className="from-night absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t to-transparent" />
 
       <div className="relative mx-auto max-w-6xl px-6">
-        {/* form + benefits */}
-        <div className="grid items-start gap-10 py-10 md:py-14 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
-          {/* left — headline + GHL form on a white card */}
-          <div data-hero-in id="estimate" className="opacity-0">
+        {/* headline + benefits (left) · form (right) */}
+        <div className="grid items-start gap-x-14 gap-y-10 py-10 md:py-14 lg:grid-cols-[1fr_1.05fr] lg:grid-rows-[auto_1fr]">
+          {/* headline */}
+          <div data-hero-in className="opacity-0 lg:col-start-1 lg:row-start-1">
+            <h1 className="font-[family-name:var(--font-space-grotesk)] text-[2.4rem] leading-[1.08] font-semibold tracking-tight text-frost md:text-6xl">
+              South Florida&apos;s
+              <br />
+              Trusted{" "}
+              <span className="from-glacier to-ice bg-gradient-to-r bg-clip-text text-transparent">
+                AC Experts.
+              </span>
+            </h1>
+            <p className="hud-label text-ice mt-5">
+              Serving all of Broward &amp; Miami-Dade · 24/7
+            </p>
+          </div>
+
+          {/* form — right side */}
+          <div
+            data-hero-in
+            id="estimate"
+            className="opacity-0 lg:col-start-2 lg:row-span-2 lg:row-start-1"
+          >
             <div className="overflow-hidden rounded-3xl bg-frost text-night shadow-[0_30px_90px_rgba(3,13,26,0.6)]">
               <div className="from-glacier to-ice flex items-center justify-between bg-gradient-to-r px-7 py-4 md:px-9">
                 <p className="font-[family-name:var(--font-plex-mono)] text-xs font-semibold tracking-[0.24em] text-night uppercase">
@@ -70,11 +89,10 @@ export default function Hero() {
               </div>
 
               <div className="px-5 pt-6 md:px-7">
-                <h1 className="font-[family-name:var(--font-space-grotesk)] text-2xl font-semibold tracking-tight text-night md:text-[1.8rem] md:leading-snug">
-                  Skilled AC techs standing by,
-                  <br className="hidden md:block" /> ready to help today.
-                </h1>
-                <p className="mt-2 text-[15px] text-night/60">
+                <h2 className="font-[family-name:var(--font-space-grotesk)] text-xl font-semibold tracking-tight text-night md:text-2xl">
+                  Skilled AC techs standing by — ready to help today.
+                </h2>
+                <p className="mt-1.5 text-[15px] text-night/60">
                   Residential &amp; commercial · a certified tech calls back fast.
                 </p>
               </div>
@@ -88,11 +106,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* right — service-area checklist */}
-          <div className="lg:pt-6">
-            <p data-hero-in className="hud-label text-ice mb-6 opacity-0">
-              Serving all of Broward &amp; Miami-Dade
-            </p>
+          {/* benefits checklist */}
+          <div className="lg:col-start-1 lg:row-start-2">
             <ul className="space-y-4">
               {BENEFITS.map((b) => (
                 <li key={b} data-benefit className="flex items-center gap-4 opacity-0">
