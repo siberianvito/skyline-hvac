@@ -7,6 +7,7 @@ import WhySkyline from "@/components/WhySkyline";
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
 import CityDirectory from "@/components/CityDirectory";
+import TrustedByBar from "@/components/TrustedByBar";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <FrostDivider />
         <Gallery />
         <CityDirectory />
+        <TrustedByBar />
         <Footer />
       </main>
     </>

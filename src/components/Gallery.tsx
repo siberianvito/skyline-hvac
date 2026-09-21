@@ -49,27 +49,27 @@ export default function Gallery() {
   return (
     <section ref={ref} className="bg-night relative py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
-        {/* the van crowns the gallery */}
-        <div className="grid items-center gap-8 md:grid-cols-2">
-          <div>
-            <p className="hud-label text-ice mb-4">The work</p>
-            <h2 className="font-[family-name:var(--font-space-grotesk)] text-4xl font-medium tracking-tight text-frost md:text-5xl">
-              Cold, delivered.
-            </h2>
-            <p className="text-steel mt-4 max-w-sm leading-relaxed">
-              Real installs from real jobs — condensers, air handlers, custom
-              ductwork. Residential &amp; commercial across Miami-Dade,
-              Broward &amp; Palm Beach.
-            </p>
-          </div>
+        {/* promo flyer — maintenance package offer */}
+        <a href="/#estimate" className="group mb-14 block">
           <img
-            src={asset("/van.png")}
-            alt="The Skyline HVAC wrapped service van"
-            className="relative z-10 -mb-16 w-full max-w-[540px] justify-self-center drop-shadow-[0_24px_48px_rgba(3,13,26,0.8)] md:-mb-20 md:justify-self-end"
+            src={asset("/media/gallery-flyer.jpg")}
+            alt="Skyline HVAC maintenance package — free diagnostic for all new customers. Call (786) 807-8125."
+            className="border-frost/10 w-full rounded-3xl border shadow-[0_24px_70px_rgba(3,13,26,0.55)] transition-transform duration-500 group-hover:scale-[1.01]"
           />
+        </a>
+
+        <p className="hud-label text-ice mb-4">The work</p>
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <h2 className="font-[family-name:var(--font-space-grotesk)] text-4xl font-medium tracking-tight text-frost md:text-5xl">
+            Cold, delivered.
+          </h2>
+          <p className="hud-label max-w-xs pb-2 opacity-50">
+            Real installs — condensers, air handlers, custom ductwork across
+            Miami-Dade, Broward &amp; Palm Beach.
+          </p>
         </div>
 
-        <div className="relative mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {JOBS.map((job, i) => (
             <figure
               key={job.src}

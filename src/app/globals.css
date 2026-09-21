@@ -167,6 +167,13 @@ body {
 .marquee-track {
   animation: marquee 55s linear infinite;
 }
+.marquee-logos {
+  animation: marquee 30s linear infinite;
+}
+.marquee-logos:hover,
+.marquee-track:hover {
+  animation-play-state: paused;
+}
 
 /* ---------- gallery placeholder pulse ---------- */
 @keyframes breathe {
