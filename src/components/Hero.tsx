@@ -73,28 +73,13 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* form — right side, with the services we offer beneath it */}
+          {/* form — right side */}
           <div
             data-hero-in
             id="estimate"
             className="opacity-0 lg:col-start-2 lg:row-span-2 lg:row-start-1"
           >
             <ConsultCard />
-
-            <div className="mt-7">
-              <p className="hud-label text-ice mb-4">Services we offer</p>
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-                {SERVICES.map((s) => (
-                  <a
-                    key={s.slug}
-                    href={`/services/${s.slug}`}
-                    className="glass hover:border-ice/50 hover:text-ice rounded-lg px-3 py-2.5 text-center text-[13px] font-medium text-frost/85 transition-colors"
-                  >
-                    {s.title}
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* benefits checklist + Google reviews badge */}
@@ -127,6 +112,25 @@ export default function Hero() {
                 className="w-60 drop-shadow-[0_6px_24px_rgba(3,13,26,0.7)] md:w-72"
               />
             </div>
+          </div>
+        </div>
+
+        {/* services we offer — full-width strip, 5 across × 2 rows */}
+        <div className="pb-12 md:pb-16">
+          <p className="hud-label text-ice mb-5 text-center">
+            Services we offer
+          </p>
+          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5">
+            {SERVICES.map((s) => (
+              <a
+                key={s.slug}
+                data-benefit
+                href={`/services/${s.slug}`}
+                className="glass hover:border-ice/50 hover:text-ice flex min-h-[52px] items-center justify-center rounded-xl px-3 py-2.5 text-center text-[13.5px] font-medium text-frost/90 opacity-0 transition-colors"
+              >
+                {s.title}
+              </a>
+            ))}
           </div>
         </div>
       </div>

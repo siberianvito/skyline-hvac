@@ -5,6 +5,8 @@ import type { NextConfig } from "next";
 const basePath = process.env.PAGES_BASE_PATH || undefined;
 
 const nextConfig: NextConfig = {
+  // hide the dev-tools indicator bubble in local dev
+  devIndicators: false,
   // This app is its own workspace (the parent folder holds sibling client sites)
   turbopack: { root: __dirname },
   // Fully static site — exportable to any static host

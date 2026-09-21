@@ -28,6 +28,24 @@ export const SERVICES: Service[] = [
     ],
   },
   {
+    slug: "ac-diagnosis",
+    title: "AC Diagnosis",
+    short: "Free full-system diagnostic for all new customers.",
+    image: "/jobs/job-02.jpg",
+    imageAlt: "Skyline HVAC technician-diagnosed rooftop condenser in Miami",
+    intro: [
+      "Weak airflow, warm spots, weird noises, a power bill that keeps climbing — before anyone sells you a fix, you deserve to know exactly what's wrong. A Skyline diagnosis checks the whole system: refrigerant pressures, electrical, airflow, coils, and controls, with clear findings you can understand.",
+      "Right now the diagnostic is FREE for all new customers across Miami-Dade, Broward, and Palm Beach. You get straight answers and a flat, written quote — then you decide. No pressure, no mystery fees.",
+    ],
+    included: [
+      "Free for all new customers — limited-time offer",
+      "Full refrigerant pressure & leak check",
+      "Electrical, capacitor & compressor testing",
+      "Airflow, coil & ductwork inspection",
+      "Written findings with a flat repair quote",
+    ],
+  },
+  {
     slug: "ac-maintenance",
     title: "AC Maintenance",
     short: "Seasonal tune-ups that stop breakdowns before they start.",
