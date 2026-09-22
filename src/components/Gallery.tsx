@@ -53,7 +53,7 @@ export default function Gallery() {
         <a href="/#estimate" className="group mb-14 block">
           <img
             src={asset("/media/gallery-flyer.jpg")}
-            alt="Skyline HVAC maintenance package — free diagnostic for all new customers. Call (786) 807-8125."
+            alt="Skyline HVAC special offer — free diagnostic for all new customers. Call (786) 807-8125."
             className="border-frost/10 w-full rounded-3xl border shadow-[0_24px_70px_rgba(3,13,26,0.55)] transition-transform duration-500 group-hover:scale-[1.01]"
           />
         </a>
