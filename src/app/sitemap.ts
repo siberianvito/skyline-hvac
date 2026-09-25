@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SERVICES } from "@/lib/services";
 import { CITIES } from "@/lib/cities";
+import { POSTS } from "@/lib/posts";
 
 export const dynamic = "force-static";
 
@@ -25,6 +26,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE}/service-areas/${c.slug}`,
       lastModified: now,
       priority: 0.7,
+    })),
+    ...POSTS.map((p) => ({
+      url: `${BASE}/blog/${p.slug}`,
+      lastModified: new Date(p.date),
+      priority: 0.6,
     })),
   ];
 }
